@@ -1,0 +1,203 @@
+.container {
+    padding: 20px;
+}
+
+body {
+    background-color: white !important;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.box {
+    /* background-color: lightblue; */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add spacing between rows */
+.col-md-4 {
+    margin-bottom: 20px;
+}
+
+/* Styling for Button Container */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Button Styling */
+.custom-button {
+    font-weight: bold;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    border: none;
+    /* background-color: lightblue; */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    /* background-color: lightblue; */
+}
+
+.elementCradnum {
+    display: block !important;
+}
+
+.card-style {
+    width: 100%;
+}
+
+.atom {
+    transform: scale(0.3);
+    /* Adjust the scale as needed */
+    margin-top: 39%;
+}
+
+.valance-atom {
+    transform: scale(0.3);
+    /* Adjust the scale as needed */
+    margin-top: 30%;
+}
+
+.valence-card {
+    height: 200%;
+    /* padding-bottom: 30%; */
+}
+
+.nucleus {
+    position: absolute !important;
+    /* Ensure absolute positioning */
+    top: 50%;
+    /* Move to center vertically */
+    left: 50%;
+    /* Move to center horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust to exact center */
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    z-index: 10;
+}
+
+.element-name-style-details-page {
+    font-size: 50px;
+}
+
+@media (max-width:992px) {
+    .container {
+        max-width: 1000px !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* .col-md-4 { width: 100%; } */
+    .container {
+        max-width: 730px !important;
+    }
+
+    .valence-card {
+        padding-bottom: 20%;
+    }
+
+    .atom {
+        margin-top: 20%;
+    }
+
+    /* .valence-shell{ margin-top: 50% !important; } */
+}
+
+.shell {
+    border: 2px solid black;
+}
+
+.electron {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.arrow {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: red;
+}
+
+/* pull push animation */
+.pull-push-anime {
+    animation: pulse 2s infinite ease-in;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.85);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.85);
+    }
+}
+
+@media (max-width:1199px) {
+    .valance-atom {
+        margin-top: 15% !important;
+    }
+}
+
+@media (max-width:575px) {
+    .atom {
+        margin-top: 30%;
+    }
+
+    .elementNum {
+        margin-top: 20%;
+    }
+
+    .valance-atom {
+        margin-top: 30% !important;
+    }
+}
+
+@media (max-width:375px) {
+    .atom {
+        margin-top: 30%;
+    }
+
+    .elementNum {
+        margin-top: 30%;
+    }
+
+    .valence-card {
+        padding-bottom: 40%;
+    }
+
+    .valance-atom {
+        margin-top: 40% !important;
+    }
+}

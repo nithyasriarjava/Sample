@@ -1,0 +1,59 @@
+.navbar-style {
+    background-color: #a8a5a5;
+    position: relative;
+    z-index: 2;
+    /* ensure this is higher than .home-style/table */
+    padding: 10px;
+}
+
+.navbar-toggle {
+    border: none;
+}
+
+.navbar-inside-style {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100vh;
+    z-index: 9999;
+    /* background-color: rgba(255, 255, 255, 0.95); */
+    background-color: #a8a5a5;
+    padding: 20px 10px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.hamburger-menu-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.navbar-close-style {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.navbar-list-style {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+    /* space below close button */
+}
+
+.navbar-item-style {
+    margin: 10px 10px;
+}
+
+.navbar-item-style a {
+    text-decoration: none;
+    color: #000;
+    /* Change to your desired color */
+    font-size: 18px;
+}
+
+.navbar-item-style a:hover {
+    color: #626262;
+}

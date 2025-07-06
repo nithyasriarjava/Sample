@@ -1,0 +1,105 @@
+.bhor-modal-bg {
+    background-color: gray !important;
+}
+
+.container {
+    padding: 0px !important;
+}
+
+.head-style {
+    text-align: center;
+    /* background-color: green; */
+    width: 100%;
+    /* Full width */
+    padding: 5px 0;
+    /* Adjust padding for better height */
+    border-radius: 15px;
+    /* Apply border radius */
+    display: block;
+    /* margin-bottom: 50px; */
+}
+
+.box-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0;
+    /* Adds spacing between boxes */
+}
+
+.box-style {
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.atom-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* width: 100%; height: 100%; */
+    /* background-color: red; */
+}
+
+.sub-head,
+.shell-buttons {
+    width: 60%;
+    height: 40px;
+    /* background-color: green; */
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sub-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    top: -20px;
+    /* Above the box */
+}
+
+.shell-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -10px;
+    /* Below the box */
+}
+
+.shell-button-style {
+    padding-left: 30%;
+    padding-right: 30%;
+    border-radius: 5px;
+}
+
+.home-btn-bhormodal {
+    margin-left: 25%;
+}
+
+/* Sub structure atom write a sub shell values */
+.sub-shells-texts {
+    padding-left: 30px;
+    padding-right: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 13px;
+    /* position: relative; top: 25px; */
+}
+
+.sub-shells-items {
+    border-radius: 50px;
+}

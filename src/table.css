@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.home-style {
+    /* margin: 0 20px; ma display: inline-flex !important; position: relative; z-index: 1; */
+}
+
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    /* 18 groups */
+    grid-auto-rows: 60px;
+    gap: 5px;
+    padding: 4px;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    background-color: #2d2d2d;
+    font-size: 0.9rem;
+}
+
+.element-number {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.element-symbol {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.element-name {
+    font-size: 10px;
+}
+
+.element-mass {
+    font-size: 9px;
+}
+
+/* Tablets and below */
+@media screen and (max-width: 1024px) {
+    .main-wrapper {
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .periodic-table {
+        grid-template-columns: repeat(18, minmax(20px, 1fr));
+        grid-auto-rows: auto;
+        gap: 4px;
+        transform: scale(0.95);
+        transform-origin: top center;
+    }
+
+    .element {
+        padding: 4px;
+        height: 45px;
+        font-size: 10px;
+        border-radius: 6px;
+    }
+
+    .element-symbol {
+        font-size: 13px;
+    }
+
+    .element-number {
+        font-size: 9px;
+    }
+
+    .element-name,
+    .element-mass {
+        font-size: 7px;
+    }
+}
+
+/* Phones - max 721px */
+@media screen and (max-width: 721px) {
+    .main-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .periodic-table {
+        grid-template-columns: repeat(18, minmax(15px, 1fr));
+        gap: 25px;
+        transform: scale(0.79);
+        transform-origin: top center;
+    }
+
+    .element {
+        width: 32px;
+        height: 40px;
+        font-size: 8px;
+        padding: 3px;
+    }
+
+    .element-symbol {
+        font-size: 11px;
+    }
+
+    .element-number {
+        font-size: 7px;
+    }
+
+    .element-name,
+    .element-mass {
+        font-size: 6px;
+    }
+}
+
+@media (max-width:572px) {
+    .home-style {
+        position: relative;
+        left: 80px !important;
+    }
+}
+
+@media (max-width:390px) {
+    .home-style {
+        position: relative;
+        left: 130px !important;
+    }
+}

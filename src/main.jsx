@@ -1,10 +1,23 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import BhorModal from "./BhorModal";
+import Details from "./Details";
+import Table from "./Tables";
+import SubShells from "./SubShells";
+import './table.css';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+export default function Main() {
+    console.log("Main component rendered");
+    return (
+        <div className="main-wrapper">
+            <Router>
+                <Routes>
+                    <Route path="/SampleApp" element={<Table />} />
+                    <Route path="/details/:index/:color?" element={<Details />} />
+                    <Route path="/bhormodal/:pvalue/:esymbol/:ename/:subShells/:bgColor?" element={<BhorModal />} />
+                    <Route path="/subShell/:index/:ename/:atomicNum/:bgColor?" element={<SubShells />} />
+                </Routes>
+            </Router>
+        </div>
+    );
+}
