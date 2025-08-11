@@ -201,3 +201,12 @@ body {
         margin-top: 40% !important;
     }
 }
+
+/* Real time image style  */
+
+.fixed-image {
+  max-width: 125%;      /* or your required width */
+  height: 100%;     /* or match container height */
+  object-fit: cover;
+  border-radius: 8px; /* optional, keeps the rounded effect */
+}

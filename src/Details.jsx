@@ -3,7 +3,10 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import * as data from '../datas';
 import { CreateAnimation } from './GetInput';
-
+// import pathRealTimeValue from '../public/Element RealTime Images/${Esymbol}_Rimg.JPG';
+// import pathElementValue from '../public/real-time-images/${Esymbol}_Img.imageset/${Esymbol}_Img.JPG';
+import path1 from  './public/Element RealTime Images';
+import path2 from  './public/real-time-images';
 function Details() {
     const navigate = useNavigate();
     const { index, color } = useParams();
@@ -13,14 +16,20 @@ function Details() {
     let automicNum = data.elementsNumber[index];
     let massNum = data.elementsMassNo[index];
     let valanceShellNum = data.valanceShellElectrons[index];
-    let subShells = data.electronicConfiguration[index]
+    let subShells = data.electronicConfiguration[index];
+    let elementItemsValue = data.ElementItems[index];
     let nutronNum = data.neutrons[index];
+    let watchAndLearnLink = data.elementUsesVediosLink[index];
+let pathRealTimeValue = `${path2}/${Esymbol}_Rimg.jpg`;
+let pathElementValue = `${path1}/${Esymbol}_Img.imageset/${Esymbol}_Img.jpg`;
+
 
     const components = [
         {
             id: 1, component: <ElementCard elementName={Ename} elementSymbol={Esymbol}
                 atomicNumber={automicNum}
-                atomicMass={massNum} />
+                atomicMass={massNum}
+                elementImage={pathRealTimeValue} />
         },
         { id: 2, component: <ElementDetails elementName={Ename} elementSymbol={Esymbol} /> },
         { id: 3, component: <ValanceElectron eSymbol={Esymbol} pValue={automicNum} /> },
@@ -28,7 +37,10 @@ function Details() {
             id: 4, component: <AtomStructure eSymbol={Esymbol} automicNum={automicNum} nutron={nutronNum}
             />
         },
-        { id: 5, component: <Application /> }
+        {
+            id: 5, component: <Application elementImg={pathElementValue}
+                elementItems={elementItemsValue} />
+        }
     ];
 
     const gotoTable = () => {
@@ -65,7 +77,8 @@ function Details() {
                     <div className="button-container">
                         <button className="custom-button pull-push-anime" style={{ backgroundColor: decodedColor }} onClick={gotoBhorModalPage}>Bhor Modal</button>
                         <button className="custom-button pull-push-anime" style={{ backgroundColor: decodedColor }} onClick={goToSubShellPage}>Aufbau Principal</button>
-                        <button className="custom-button pull-push-anime" style={{ backgroundColor: decodedColor }}>Watch and Learn</button>
+                        {/* <a href={watchAndLearnLink}><button className="custom-button pull-push-anime" style={{ backgroundColor: decodedColor }}>Watch and Learn</button></a> */}
+                        <a href={watchAndLearnLink} className="custom-button text-center pull-push-anime" style={{ backgroundColor: decodedColor, textDecoration: 'none' }}>Watch and Learn</a>
                     </div>
                 </div>
             </div>
@@ -88,8 +101,9 @@ function ElementCard({ elementSymbol, elementName, atomicNumber, atomicMass, ele
         <div className="card card-style element-card">
             <div className="row">
                 <div className="col-sm-4">
-                    {/* <img src={elementImage} alt={elementName} className="img-fluid rounded" /> */}
-                    <p>This is image seciton</p>
+                    <img src={elementImage} alt={elementName} className="img-fluid rounded fixed-image" />
+                    {/* <img src="" alt="" /> */}
+                    {/* <p>This is image seciton</p> */}
                 </div>
                 <div className="col-sm-8">
                     <div className="card">
@@ -159,21 +173,20 @@ function AtomStructure({ eSymbol, automicNum, nutron }) {
     );
 }
 
-function Application() {
+function Application({ elementImg, elementItems }) {
     return (
         <div className="card card-style application">
             <div className="card-header">Applications of Lead</div>
             <div className="card-body text-center">
                 <div className="row">
                     <div className="col-sm-6">
-                        {/* <img src="path/to/application-image.png" alt="Applications" className="img-fluid" /> */}
-                        <h2>Image here</h2>
+                        <img src={elementImg} alt="Applications" className="img-fluid" />
                     </div>
                     <div className="col-sm-6">
                         <ul className="text-start">
-                            <li>X-rays</li>
-                            <li>Chips</li>
-                            <li>Pigments</li>
+                            <li>{elementItems[0]}</li>
+                            <li>{elementItems[1]}</li>
+                            <li>{elementItems[2]}</li>
                         </ul>
                     </div>
                 </div>

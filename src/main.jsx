@@ -7,7 +7,6 @@ import SubShells from "./SubShells";
 import './table.css';
 
 export default function Main() {
-    console.log("Main component rendered");
     return (
         <div className="main-wrapper">
             <Router>

@@ -51,13 +51,11 @@ export default function BhormodalDesign({ pValue,
         for (let i = 0; i < subList.length; i++) {
             let val = (
                 <div className="col-sm-4 col-4">
-                    <div className="sub-shells-texts text-white">
-                        <p className='text-dark'>
-                            {subShellsCount[copyShellIndexValue]}
-                            {subShellsLabel[i]}
-                            <sub>{subList[i]}</sub>
-                        </p>
-                    </div>
+                    <p className='text-dark sub-pill'>
+                        {subShellsCount[copyShellIndexValue]}
+                        {subShellsLabel[i]}
+                        <sub>{subList[i]}</sub>
+                    </p>
                 </div>
             );
 

@@ -9,7 +9,6 @@ import './table.css';
 import NavBar from "./NavBar";
 
 function Table() {
-    console.log("Table component rendered");
     const navigate = useNavigate();
 
     const handleClickInThisFun = (index) => {
@@ -48,7 +47,6 @@ function Table() {
                                             <span className="element-symbol">{elementsSymbols[index]}</span>
                                             <span className="element-mass">{elementsMassNo[index]}</span>
                                         </div>
-
                                     </>
 
 

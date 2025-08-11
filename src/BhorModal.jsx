@@ -28,7 +28,7 @@ function BhorModal() {
         index++; // Move to the next index in subShells
     }
     const goToDetails = () => {
-        navigate(`/SampleApp`);
+        navigate(`/`);
     };
     // let [check,setCheck] = useState(false);
 
@@ -120,7 +120,7 @@ function BhorModal() {
                         Home
                     </button>
                 </div>
-                 <div className="col-sm-4">
+                <div className="col-sm-4">
                     <h2 className='head-style' style={{ backgroundColor: `${decodedColor}` }}>{ename}-{pvalue}</h2>
                 </div>
                 <div className="col-sm-4"></div>
@@ -167,6 +167,7 @@ export function SubShellsAtom({ pValue, esymbol, isBoxShadow, shellIndexValue, e
 
     // const { subValues } = useContext(ShellContext);
     // setCheck(true);
+    console.log("subValues", subValues);
     return (
         <div className="box-container">
             <div className="sub-head" style={{ backgroundColor: decodedColor }}>{getShellName == undefined ? 'K Sub Shell' : `${getShellName} Sub Shell`}</div>
@@ -185,15 +186,17 @@ export function SubShellsAtom({ pValue, esymbol, isBoxShadow, shellIndexValue, e
                 />
                 {/* </div> */}
                 {/* </ShellProvider> */}
-                <div style={{position: 'relative',top: '30px'}}>
-                    <p className='text-dark border border-dark sub-shells-texts'>
+                <div class="sub-shell-wrapper">
+                    <p className='text-dark sub-shell-label'>
                         {getShellName == undefined ? 'K Sub Shell' : `${getShellName} Sub Shell`}</p>
-                    <div className="row border border-dark sub-shells-items">
-                        {subValues.map((item, index) => (
-                            <React.Fragment key={index}>
-                                {item}
-                            </React.Fragment>
-                        ))}
+                    <div className="sub-shell-box">
+                        <div className="row row-style">
+                            {subValues.map((item, index) => (
+                                <React.Fragment key={index}>
+                                    {item}
+                                </React.Fragment>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

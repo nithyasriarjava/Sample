@@ -105,6 +105,113 @@ export const elementPositions = [
   
 ];
 
+// Watch and learn button action 
+
+export let elementUsesVediosLink = [
+    "https://www.youtube.com/shorts/H808apdGzXk",//H
+    "https://www.youtube.com/shorts/adOfHtA0vgw",//he
+    "https://www.youtube.com/shorts/yGDkiUAwxRs",//li
+    "https://www.youtube.com/shorts/D6BchzYML0M",//be
+    "https://www.youtube.com/shorts/svfpG-NgO3o",//b
+    "https://www.youtube.com/shorts/DJxF6MOYYu8",//c
+    "https://www.youtube.com/shorts/dak8kmL348w",//n
+    "https://www.youtube.com/shorts/Z6rhk95-FVU",//o
+    "https://www.youtube.com/shorts/Dd349NWrNyo",//f
+    "https://www.youtube.com/shorts/gloS2lc7j3E",//ne
+    "https://www.youtube.com/shorts/Bd2iI1A1Ya0",//na
+    "https://www.youtube.com/shorts/kVdmVkkDulM",//mg
+    "https://www.youtube.com/shorts/5T8jamtBhJA",//al
+    "https://www.youtube.com/shorts/GF2z9LewLEo",//si
+    "https://www.youtube.com/shorts/uRl5A1TnP64",//phosphorous
+    "https://www.youtube.com/shorts/htbVB6ILHPI",//sulfur
+    "https://www.youtube.com/watch?v=mY6skQnW0i8",//cholorine
+    "https://www.youtube.com/watch?v=rK_m7sSn-yo",//argon
+    "https://www.youtube.com/shorts/cRChlWZkAXs",//potassium
+    "https://www.youtube.com/watch?v=HP0UPkMF1gA",//calcium
+    "https://www.youtube.com/shorts/c3jOSjk3KdA",//scandium
+    "https://www.youtube.com/shorts/xgUwncDet30",//titanium
+    "https://www.youtube.com/shorts/pVDxGtISlco",//vanadium
+    "https://www.youtube.com/shorts/b7ucW6T2tRE",//chromium
+    "https://www.youtube.com/shorts/FtHmbzc5dwo",//manganese
+    "https://www.youtube.com/watch?v=XV609o_o9kg",//iron
+    "https://www.youtube.com/shorts/n3B25em1PZU",//cobalt
+    "https://www.youtube.com/shorts/tBl6PNKaY2g",//nickle
+    "https://www.youtube.com/watch?v=jP_t1lo0ZgA",//copper
+    "https://www.youtube.com/watch?v=TuJXgMex85g",//zinc
+    "https://www.youtube.com/shorts/nqedbR9SKMA",//gallium
+    "https://www.youtube.com/shorts/hOkrL0VaqXA",//germinium
+    "https://www.youtube.com/shorts/fQR-i-hiQe0",//arsenic
+    "https://www.youtube.com/watch?v=cc26zFE8X1k",//selenium
+    "https://www.youtube.com/shorts/eLvXS6J_ETQ",//bromine
+    "https://www.youtube.com/watch?v=il4OOY7Zseg",//krypton
+    "https://www.youtube.com/watch?v=0XLGopBovoI",//rubidium
+    "https://www.youtube.com/watch?v=d5ztPGrsgNQ",//strontium
+    "https://www.youtube.com/watch?v=NxbOQ1FhqdQ",//yttrium
+    "https://www.youtube.com/watch?v=gNJE2MPktvg",//zirconium
+    "https://www.youtube.com/watch?v=ynfGLg9_ic8",//nobidium
+    "https://www.youtube.com/watch?v=Diu01OdWh44",//molybedinium
+    "https://www.youtube.com/watch?v=ud5c1TVkcnU",//technitium
+    "https://www.youtube.com/watch?v=wl5ZYb0hDTc",//ruthenium
+    "https://www.youtube.com/watch?v=ZBO1F3Z9Csk",//rhodium
+    "https://youtu.be/R09uuzclDI0",//palladium
+    "https://www.youtube.com/watch?v=4oyKUt4nPwc",//silver
+    "https://www.youtube.com/watch?v=boRius1DYdQ",//cadmium
+    "https://www.youtube.com/watch?v=TviX7V-ay5I",//indium
+    "https://www.youtube.com/watch?v=qht_NDXCsw4",//tin
+    "https://www.youtube.com/watch?v=tm37Ybya1ts",//antimony
+    "https://www.youtube.com/watch?v=5ChFbVu4Mpk",//tellurium
+    "https://www.youtube.com/watch?v=H9ceTN-4PN0",//iodine
+    "https://youtu.be/Ejoct_6pQ74",//xenon
+    "https://www.youtube.com/watch?v=5aD6HwUE2c0",//caesium
+    "https://youtu.be/9srJdQU3NOo",//barium
+    "https://www.youtube.com/watch?v=Q21clW0s0B8",//lanthanum
+    "https://www.youtube.com/watch?v=frD3126ry8o",//cerium
+    "https://youtu.be/IL06CzXF3ns",//paresmodium
+    "https://youtu.be/XZZDy_R2h7E",//neodymium
+    "https://youtu.be/HplP_MY78NQ",//promethium
+    "https://www.youtube.com/watch?v=LpTkBg8HpvY",//samarium
+    "https://www.youtube.com/watch?v=88YOmg_FUVo",//europium
+    "https://www.youtube.com/watch?v=uUo7pY38fGY",//gadolinium
+    "https://youtu.be/On5LjH9TQxY",//terbium
+    "https://youtu.be/hFfR_qOSa-8",//dysprosium
+    "https://www.youtube.com/watch?v=HQahtzCU0BU",//Holmium
+    "https://www.youtube.com/watch?v=E-DY_RT4fJ4",//eurbium
+    "https://youtu.be/vS0vhYdOGMc",//thulium
+    "https://youtu.be/RAqRI9wTuk8",//ytterbium
+    "https://youtu.be/7wrDfRnRHqI",//lutetium
+    "https://youtu.be/Qb9f5uBKJhg",//hafnium
+    "https://youtu.be/51xFP1Yn3g0",//tanthalum
+    "https://youtu.be/dqMY6sdVqf8",//tungsten
+    "https://youtu.be/BIJXqzWiHtI",//rhenium
+    "https://youtu.be/D9C_lbivcn4",//osmium
+    "https://youtu.be/lGy1vGnYAak",//iridium
+    "https://www.youtube.com/watch?v=vhPu-3b0FnY",//platinum
+    "https://www.youtube.com/watch?v=vhPu-3b0FnY",//gold
+    "https://www.youtube.com/watch?v=ayMwyJO9AB4",//mercury
+    "https://www.youtube.com/watch?v=4SVhSZ-rfLM",//thallium
+    "https://www.youtube.com/watch?v=2ERfPN5JLX8",//lead
+    "https://www.youtube.com/watch?v=vyIo-c7VmIM",//bismuth
+    "https://www.youtube.com/watch?v=bbr5yWwsI1o",//polonium
+    "https://www.youtube.com/watch?v=GP8jJgzEmwE",//astatine
+    "https://www.youtube.com/watch?v=mTuC_LrEfbU",//radon
+    "https://www.youtube.com/watch?v=PyFLvSg6ZDw",//francium
+    "https://www.youtube.com/watch?v=I_1XelLa1eo",//radium
+    "https://www.youtube.com/watch?v=rKm0ShaJNFM",//actinum
+    "https://youtu.be/FjHH8Qf3aO4",//thorium
+    "https://www.youtube.com/watch?v=pXH0YECjoZI",//protacinum
+    "https://www.youtube.com/watch?v=0sIHd1Jhtp4",//uranium
+    "https://youtu.be/1D75B0_URbE",//neptunium
+    "https://www.youtube.com/watch?v=5LRK5vOESw8",//plutonium
+    "https://www.youtube.com/watch?v=ls2oAiUo5gQ",//americium
+    "https://www.youtube.com/watch?v=55R1JzEjISw",//curium
+    "https://youtu.be/7p1D9C1qkZY",//berkilium
+    "https://www.youtube.com/watch?v=Fk7f0h0n7tw",//californium
+    "https://www.youtube.com/watch?v=Hq1kz09K2W4",//einstenium
+    "https://www.youtube.com/watch?v=zNOeVoHnkYg",//fermium
+    "https://www.youtube.com/watch?v=OGZa7iiyg8A",//mendelvium
+    "https://www.youtube.com/watch?v=tzZjHz4vhrI",//nobelium
+    "https://www.youtube.com/watch?v=ab9E5ZbfAQU",//lawrentium
+]
 
 
 export const elementsNames = [
@@ -172,6 +279,120 @@ export const elementsNames = [
     "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm",
     "Md", "No", "Lr"
   ];
+
+  // Element items 
+
+ export const ElementItems = [
+  ["x-ray", "chips", "pigments"],
+  ["lasers", "medical", "television screens"],
+  ["welding", "spacecraft", "metal alloys"],
+  ["nuclear reactors", "space travel", "armor"],
+  ["glass", "ceramics", "electronics"],
+  ["lubricants", "rocket fuel", "nuclear shielding"],
+  ["fertilizers", "bombs", "fireworks"],
+  ["batteries", "pharmaceuticals", "dyes"],
+  ["solar panels", "mirrors", "light sensors"],
+  ["airbags", "steel production", "heat-resistant materials"],
+  ["semiconductors", "microchips", "transistors"],
+  ["rechargeable batteries", "magnets", "hybrid vehicles"],
+  ["LED lights", "lasers", "fluorescent materials"],
+  ["MRI", "magnets", "electronics"],
+  ["steel hardening", "lasers", "welding"],
+  ["nuclear industry", "radiation shielding", "defense applications"],
+  ["stainless steel", "magnets", "aircraft engines"],
+  ["television screens", "magnets", "glass polishing"],
+  ["aircraft parts", "metal alloys", "electronics"],
+  ["cancer treatment", "spacecraft", "X-ray machines"],
+  ["UV lamps", "vacuum tubes", "nuclear control rods"],
+  ["insulation", "glass production", "lasers"],
+  ["high-temperature ceramics", "semiconductors", "metallurgy"],
+  ["medical imaging", "satellite components", "optical coatings"],
+  ["infrared optics", "ceramics", "lubricants"],
+  ["photography", "batteries", "thermoelectric devices"],
+  ["vacuum tubes", "glass", "optical devices"],
+  ["lasers", "gas mantles", "radioactive dating"],
+  ["control rods", "nuclear reactors", "radiation detection"],
+  ["nuclear fuel", "geological dating", "research reactors"],
+  ["thermoelectric materials", "glass coloring", "solar cells"],
+  ["alloys", "spark plugs", "batteries"],
+  ["color television", "fluorescent lamps", "nuclear shielding"],
+  ["light sensors", "ceramics", "magnets"],
+  ["spacecraft", "missile components", "optics"],
+  ["reactor shielding", "control rods", "superconductors"],
+  ["nuclear fuel", "missile guidance", "nuclear submarines"],
+  ["metallurgy", "ceramics", "electronic devices"],
+  ["coloring glass", "welding goggles", "optical filters"],
+  ["ceramics", "glass additives", "electronics"],
+  ["control rods", "radiation shielding", "space applications"],
+  ["glass polishing", "nuclear fuel", "alloying"],
+  ["ceramic capacitors", "superconductors", "nuclear shielding"],
+  ["rocket nozzles", "high-temperature alloys", "spacecraft"],
+  ["color TV", "fluorescent screens", "magnets"],
+  ["metallurgy", "semiconductors", "photodetectors"],
+  ["photovoltaics", "batteries", "solar panels"],
+  ["fluorescent materials", "metal alloys", "TV screens"],
+  ["steel alloys", "batteries", "special glass"],
+  ["fuel cells", "ceramics", "electronics"],
+  ["infrared equipment", "ceramics", "batteries"],
+  ["colorants", "metallurgy", "X-ray devices"],
+  ["UV detectors", "electronics", "medical equipment"],
+  ["neutron capture", "control rods", "reactors"],
+  ["vacuum tubes", "electronics", "light sensors"],
+  ["batteries", "glass", "alloys"],
+  ["aircraft engines", "nuclear technology", "special alloys"],
+  ["nuclear power", "spacecraft", "radiation shielding"],
+  ["radiation therapy", "glass", "defense"],
+  ["nuclear reactors", "spacecraft", "high-tech ceramics"],
+  ["electronics", "lasers", "glass production"],
+  ["color displays", "fiber optics", "coatings"],
+  ["thermoelectric generators", "electronics", "glass coloring"],
+  ["ceramics", "glass", "optics"],
+  ["glass coloring", "metallurgy", "optical lenses"],
+  ["TV phosphors", "electronics", "scintillators"],
+  ["fiber optics", "fluorescent lighting", "catalysts"],
+  ["optical devices", "electronics", "energy storage"],
+  ["electronics", "fuel cells", "glass manufacturing"],
+  ["superconductors", "glass coating", "X-ray devices"],
+  ["alloys", "fuel cells", "telecom equipment"],
+  ["batteries", "glass", "optical amplifiers"],
+  ["infrared optics", "electronics", "laser applications"],
+  ["photovoltaics", "electronics", "catalysis"],
+  ["glass", "ceramics", "batteries"],
+  ["electronics", "ceramics", "optics"],
+  ["battery electrodes", "solar cells", "photodetectors"],
+  ["optical fibers", "glass", "electronics"],
+  ["welding", "glass cutting", "telecommunications"],
+  ["TV screens", "fiber optics", "infrared sensors"],
+  ["optical lenses", "infrared optics", "precision instruments"],
+  ["catalysts", "magnets", "electronics"],
+  ["gas mantles", "alloys", "lighting"],
+  ["gas lighting", "ceramics", "spacecraft parts"],
+  ["catalysis", "thermoelectric materials", "superconductors"],
+  ["thermoelectric devices", "nuclear batteries", "alloys"],
+  ["glass", "electronics", "control rods"],
+  ["lubricants", "greases", "nuclear shielding"],
+  ["glass production", "ceramics", "thermoelectric materials"],
+  ["glass coatings", "solar panels", "sensors"],
+  ["lasers", "infrared detectors", "space research"],
+  ["ceramics", "optical devices", "superconductors"],
+  ["lasers", "optics", "catalysts"],
+  ["fiber optics", "color displays", "alloys"],
+  ["magnets", "lasers", "glass additives"],
+  ["UV filters", "infrared sensors", "optical glass"],
+  ["spacecraft", "nuclear tech", "scintillators"],
+  ["electronics", "glass", "neutron absorbers"],
+  ["nuclear imaging", "radiation shielding", "lasers"],
+  ["nuclear detectors", "radiation therapy", "space probes"],
+  ["fuel rods", "superalloys", "medical diagnostics"],
+  ["nuclear fusion", "aerospace alloys", "ceramics"],
+  ["optical amplifiers", "glass fibers", "batteries"],
+  ["fiber lasers", "X-ray shielding", "magnets"],
+  ["aerospace", "nuclear cooling", "glass melting"],
+  ["glass", "spacecraft optics", "control systems"],
+  ["medical lasers", "infrared optics", "optical fiber"],
+  ["satellite components", "ceramics", "infrared devices"]
+];
+
 
   export const elementColors = {
     nonMetals: "#55b041",             // Green

@@ -127,7 +127,7 @@ function SubShells() {
     let pyramidIndex = -1;
 
     const goToDetails = () => {
-        navigate(`/SampleApp`);
+        navigate(`/`);
     };
 
     const [filledElectrons, setFilledElectrons] = useState([]);
@@ -195,20 +195,29 @@ function SubShells() {
                                         const orderIndex = subShellsCount
                                             .slice(0, i)
                                             .reduce((acc, cur) => acc + cur, 0) + j;
-                                            console.log(filledElectrons);
-                                            const fillIndex = fillOrder.indexOf(orderIndex);
+
+                                        const fillIndex = fillOrder.indexOf(orderIndex);
                                         const electrons = filledElectrons[fillIndex] || 0;
                                         const label = `${i + 1}${lst[j]}`;
 
+                                        // Get max electrons for this subshell type
+                                        const type = lst[j]; // e.g. 's', 'p', 'd', 'f'
+                                        const maxElectrons =
+                                            type === 's' ? 2 :
+                                                type === 'p' ? 6 :
+                                                    type === 'd' ? 10 :
+                                                        type === 'f' ? 14 : 0;
+
+                                        const isPartial = electrons > 0 && electrons < maxElectrons;
+
                                         return (
                                             <div
-                                                className="subshell"
+                                                className={`subshell ${isPartial ? "partial-fill" : ""}`}
                                                 key={orderIndex}
                                                 style={{
-                                                    backgroundColor:
-                                                        electrons === 0 ? 'white' : subShellsColor[j],
+                                                    backgroundColor: electrons === 0 ? 'white' : subShellsColor[j],
                                                     color: electrons === 0 ? 'black' : 'white',
-                                                    zIndex:30
+                                                    zIndex: 30
                                                 }}
                                             >
                                                 <div className="line"></div>
@@ -216,6 +225,7 @@ function SubShells() {
                                             </div>
                                         );
                                     })}
+
                                 </div>
                             ))}
                         </div>
