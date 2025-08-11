@@ -5,8 +5,8 @@ import * as data from '../datas';
 import { CreateAnimation } from './GetInput';
 // import pathRealTimeValue from '../public/Element RealTime Images/${Esymbol}_Rimg.JPG';
 // import pathElementValue from '../public/real-time-images/${Esymbol}_Img.imageset/${Esymbol}_Img.JPG';
-import path1 from  './public/Element RealTime Images';
-import path2 from  './public/real-time-images';
+// import path1 from  './public/Element RealTime Images';
+// import path2 from  './public/real-time-images';
 function Details() {
     const navigate = useNavigate();
     const { index, color } = useParams();
@@ -20,8 +20,8 @@ function Details() {
     let elementItemsValue = data.ElementItems[index];
     let nutronNum = data.neutrons[index];
     let watchAndLearnLink = data.elementUsesVediosLink[index];
-let pathRealTimeValue = `${path2}/${Esymbol}_Rimg.jpg`;
-let pathElementValue = `${path1}/${Esymbol}_Img.imageset/${Esymbol}_Img.jpg`;
+// let pathRealTimeValue = `${path2}/${Esymbol}_Rimg.jpg`;
+// let pathElementValue = `${path1}/${Esymbol}_Img.imageset/${Esymbol}_Img.jpg`;
 
 
     const components = [
@@ -29,7 +29,7 @@ let pathElementValue = `${path1}/${Esymbol}_Img.imageset/${Esymbol}_Img.jpg`;
             id: 1, component: <ElementCard elementName={Ename} elementSymbol={Esymbol}
                 atomicNumber={automicNum}
                 atomicMass={massNum}
-                elementImage={pathRealTimeValue} />
+                elementImage={"pathRealTimeValue"} />
         },
         { id: 2, component: <ElementDetails elementName={Ename} elementSymbol={Esymbol} /> },
         { id: 3, component: <ValanceElectron eSymbol={Esymbol} pValue={automicNum} /> },
@@ -38,7 +38,7 @@ let pathElementValue = `${path1}/${Esymbol}_Img.imageset/${Esymbol}_Img.jpg`;
             />
         },
         {
-            id: 5, component: <Application elementImg={pathElementValue}
+            id: 5, component: <Application elementImg={"pathElementValue"}
                 elementItems={elementItemsValue} />
         }
     ];
