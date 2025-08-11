@@ -44,7 +44,7 @@ function Details() {
     ];
 
     const gotoTable = () => {
-        navigate(`/SampleApp`);
+        navigate(`/Sample`);
     };
 
     const gotoBhorModalPage = () => {

@@ -11,7 +11,7 @@ export default function Main() {
         <div className="main-wrapper">
             <Router>
                 <Routes>
-                    <Route path="/SampleApp" element={<Table />} />
+                    <Route path="/Sample" element={<Table />} />
                     <Route path="/details/:index/:color?" element={<Details />} />
                     <Route path="/bhormodal/:pvalue/:esymbol/:ename/:subShells/:bgColor?" element={<BhorModal />} />
                     <Route path="/subShell/:index/:ename/:atomicNum/:bgColor?" element={<SubShells />} />
