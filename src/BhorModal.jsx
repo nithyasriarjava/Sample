@@ -28,7 +28,7 @@ function BhorModal() {
         index++; // Move to the next index in subShells
     }
     const goToDetails = () => {
-        navigate(`/`);
+        navigate(`/Sample`);
     };
     // let [check,setCheck] = useState(false);
 

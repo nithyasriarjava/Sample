@@ -22,7 +22,7 @@ import "./SubShells.css";
 
 //     let subshellIndex = 0; // Track index in subShellsArray
 //     const goToDetails = () => { 
-//         navigate(`/`);
+//         navigate(`/Sample`);
 //     };
 //     return (
 //         <div className="container">
@@ -127,7 +127,7 @@ function SubShells() {
     let pyramidIndex = -1;
 
     const goToDetails = () => {
-        navigate(`/`);
+        navigate(`/Sample`);
     };
 
     const [filledElectrons, setFilledElectrons] = useState([]);
