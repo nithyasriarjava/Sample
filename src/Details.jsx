@@ -3,10 +3,9 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import * as data from '../datas';
 import { CreateAnimation } from './GetInput';
-// import pathRealTimeValue from '../public/Element RealTime Images/${Esymbol}_Rimg.JPG';
+// import pathRealTimeValue from "./Element RealTime Images/Ac_Img.imageset/Ac_Img.jpg";
 // import pathElementValue from '../public/real-time-images/${Esymbol}_Img.imageset/${Esymbol}_Img.JPG';
-// import path1 from  './public/Element RealTime Images';
-// import path2 from  './public/real-time-images';
+
 function Details() {
     const navigate = useNavigate();
     const { index, color } = useParams();
@@ -20,16 +19,46 @@ function Details() {
     let elementItemsValue = data.ElementItems[index];
     let nutronNum = data.neutrons[index];
     let watchAndLearnLink = data.elementUsesVediosLink[index];
-// let pathRealTimeValue = `${path2}/${Esymbol}_Rimg.jpg`;
-// let pathElementValue = `${path1}/${Esymbol}_Img.imageset/${Esymbol}_Img.jpg`;
+// Build the keys for accessing images in imported objects
+// If images are in public/real-time-images/
+// ../real-time-images/
+// Element RealTime Images/ 
+let pathRealTimeValue = `./real-time-images/${Esymbol}_Rimg.jpg`;
+let pathElementValue = `./Element RealTime Images/${Esymbol}.jpg` || `./Element RealTime Images/${Esymbol}.jpeg`;
 
+try {
+    pathRealTimeValue = new URL(`./real-time-images/${Esymbol}_Rimg.jpg`, import.meta.url).href;
+} catch {
+    try {
+        pathRealTimeValue = new URL(`./real-time-images/${Esymbol}_Rimg.jpeg`, import.meta.url).href;
+    } catch {
+        pathRealTimeValue = `/vite.svg`;
+    }
+}
+
+try {
+    pathElementValue = new URL(`./Element RealTime Images/${Esymbol}.jpg`, import.meta.url).href;
+    console.log(`✅ Loaded JPG: ${Esymbol}.jpg`);
+} catch {
+    try {
+        pathElementValue = new URL(`./Element RealTime Images/${Esymbol}.jpeg`, import.meta.url).href;
+        console.log(`✅ Loaded JPEG: ${Esymbol}.jpeg`);
+    } catch {
+        console.log(`❌ Missing: ${Esymbol} (both .jpg and .jpeg)`);
+        pathElementValue = `/vite.svg`;
+    }
+}
+
+
+// let pathRealTimeValue = `/${path2}/${Esymbol}_Rimg.jpg`;
+// let pathElementValue = `/${path1}/${Esymbol}_Img.imageset/${Esymbol}_Img.jpg`;
 
     const components = [
         {
             id: 1, component: <ElementCard elementName={Ename} elementSymbol={Esymbol}
                 atomicNumber={automicNum}
                 atomicMass={massNum}
-                elementImage={"pathRealTimeValue"} />
+                elementImage={pathRealTimeValue} />
         },
         { id: 2, component: <ElementDetails elementName={Ename} elementSymbol={Esymbol} /> },
         { id: 3, component: <ValanceElectron eSymbol={Esymbol} pValue={automicNum} /> },
@@ -38,7 +67,7 @@ function Details() {
             />
         },
         {
-            id: 5, component: <Application elementImg={"pathElementValue"}
+            id: 5, component: <Application elementImg={pathElementValue}
                 elementItems={elementItemsValue} />
         }
     ];
