@@ -1,81 +1,237 @@
+/* ============================================================
+   SUBSHELLS PAGE
+   ============================================================ */
+
+/* ── Electron Configuration card ── */
+.config-card {
+    border-radius: 16px;
+    padding: 1.125rem;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.18);
+    animation: fadeIn 0.55s ease-out;
+    /* No fixed min-height — let content drive height */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.config-title {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* Two-column grid for config items */
+.config-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.e-config-texts {
+    padding: 0.5rem;
+    background: rgba(255,255,255,0.12);
+    border-radius: 7px;
+    transition: transform 0.22s ease, background 0.22s ease;
+    /* Prevent text overflow */
+    overflow: hidden;
+    word-break: break-word;
+}
+.e-config-texts:hover {
+    transform: translateX(3px);
+    background: rgba(255,255,255,0.22);
+}
+.e-config-texts p {
+    margin: 0;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.e-config-val {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.5rem;
+    min-width: 28px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.22);
+    transition: transform 0.22s ease;
+    color: #fff;
+}
+.e-config-val:hover { transform: scale(1.1); }
+
+/* ── Pyramid card ── */
+.pyramid-card {
+    background: rgba(255,255,255,0.98);
+    border-radius: 16px;
+    padding: 1.125rem;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.18);
+    animation: fadeIn 0.55s ease-out 0.15s both;
+}
+
+.pyramid-title {
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
 .pyramid {
-    /* display: flex; flex-direction: column; align-items: center; */
-    margin: 10%;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.75rem 0.375rem;
 }
 
 .pyramid-row {
     display: flex;
-    /* justify-content: center; */
-    gap: 10px;
-    margin-top: 3%;
+    gap: 0.625rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .subshell {
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: white; */
-    border: 1px solid black;
+    border: 2px solid rgba(0,0,0,0.13);
     border-radius: 50%;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+    font-weight: 700;
+    font-size: 0.75rem;
+    position: relative;
+    text-align: center;
+    line-height: 1.2;
+}
+.subshell:hover {
+    transform: scale(1.14);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.22);
 }
 
 .line {
-    width: 60px;
+    width: 50px;
     height: 0;
-    border-top: 1.5px dashed gray;
+    border-top: 2px dashed rgba(128,128,128,0.38);
     position: absolute;
     rotate: -45deg;
-    z-index: -10;
+    z-index: -1;
 }
-
-.e-config {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.e-config-val {
-    padding: 10px;
-    width: 30px;
-    /* Set a fixed width */
-    height: 20px;
-    /* Set a fixed height */
-    text-align: center;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    /* Optional: Rounded corners */
-    font-weight: bold;
-    /* Optional: Makes text stand out */
-}
-
-@media (max-width:1199px) {
-    .electron-box {
-        height: 100% !important;
-    }
-}
-
-.anbuf-arrow {
-    position: absolute;
-}
-
 
 @keyframes bounceFill {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.18); }
+}
+.subshell.partial-fill {
+    animation: bounceFill 1s ease-in-out infinite;
+    box-shadow: 0 0 16px rgba(255,107,107,0.65);
 }
 
-.subshell.partial-fill {
-    animation: bounceFill 0.6s ease-in-out infinite;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+/* ── Electron counter card ── */
+.electron-counter {
+    border-radius: 16px;
+    padding: 1.75rem 1.125rem;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.18);
+    animation: fadeIn 0.55s ease-out 0.3s both;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Minimum height so it doesn't collapse */
+    min-height: 180px;
+}
+
+.counter-title {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.counter-display {
+    background: #fff;
+    border-radius: 16px;
+    /* Responsive padding — no fixed large values */
+    padding: 1.25rem 2rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.04); }
+}
+
+.counter-value {
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+    text-align: center;
+    line-height: 1;
+}
+
+/* ── Tablet (768px+) ── */
+@media (min-width: 768px) {
+    .config-card,
+    .pyramid-card,
+    .electron-counter {
+        padding: 1.375rem;
+        border-radius: 18px;
+    }
+
+    .config-grid { gap: 0.625rem; }
+    .e-config-texts { padding: 0.625rem; }
+    .e-config-texts p { font-size: 0.85rem; }
+    .e-config-val { padding: 0.3rem 0.625rem; font-size: 0.85rem; }
+
+    .pyramid { gap: 0.75rem; padding: 1rem 0.5rem; }
+    .pyramid-row { gap: 0.75rem; }
+    .subshell { width: 48px; height: 48px; font-size: 0.8rem; }
+    .line { width: 54px; }
+
+    .counter-display { padding: 1.5rem 2.5rem; }
+    .counter-value { font-size: 3rem; }
+}
+
+/* ── Desktop (1024px+) ── */
+@media (min-width: 1024px) {
+    .config-card,
+    .pyramid-card,
+    .electron-counter {
+        padding: 1.625rem;
+        border-radius: 20px;
+    }
+
+    .e-config-texts p { font-size: 0.9rem; white-space: normal; }
+    .e-config-val { font-size: 0.9rem; }
+
+    .pyramid { gap: 0.875rem; padding: 1.125rem 0.75rem; }
+    .pyramid-row { gap: 0.875rem; }
+    .subshell { width: 52px; height: 52px; font-size: 0.85rem; }
+    .line { width: 58px; }
+
+    .counter-display { padding: 2rem 3rem; }
+    .counter-value { font-size: 3.5rem; }
+}
+
+/* ── Large desktop (1440px+) ── */
+@media (min-width: 1440px) {
+    .counter-value { font-size: 4rem; }
 }

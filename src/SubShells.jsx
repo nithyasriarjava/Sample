@@ -154,25 +154,25 @@ function SubShells() {
     }, [subShellsArray]);
 
     return (
-        <>
-            <div className="container">
-                <div className="row">
-                    <div className="col-sm-4">
-                        <button className="custom-button home-btn-bhormodal pull-push-anime mb-2"
-                            style={{ backgroundColor: `${decodedColor}` }}
-                            onClick={goToDetails}>
-                            Home
-                        </button>
-                    </div>
-                    <div className="col-sm-4">
-                        <h2 className="head-style text-white" style={{ backgroundColor: `${decodedColor}` }}>
-                            {ename}- {atomicNum}
-                        </h2>
-                    </div>
+        <div className="page-wrapper subshells-container">
+            <div className="page-inner">
+                <div className="page-header">
+                    <button
+                        className="btn btn-sm"
+                        style={{ backgroundColor: decodedColor }}
+                        onClick={goToDetails}
+                    >
+                        ← Home
+                    </button>
+                    <h1 className="page-title" style={{ backgroundColor: decodedColor }}>
+                        {ename} — {atomicNum}
+                    </h1>
                 </div>
-                <div className="row g-5">
-                    <div className="col-xl-4 col-sm-6 col-md-6">
-                        <div className="box e-config text-white" style={{ backgroundColor: decodedColor }}>
+                <div className="row g-4">
+                    <div className="col-12 col-lg-4">
+                        <div className="config-card" style={{ backgroundColor: decodedColor }}>
+                            <h3 className="config-title">Electron Configuration</h3>
+                            <div className="config-grid">
                             {subShellsCount.map((count, i) => {
                                 let elements = Array.from({ length: count }).map((_, k) => {
                                     let value = subShellsArray[currentIndex] || 0;
@@ -185,10 +185,13 @@ function SubShells() {
                                 });
                                 return elements;
                             })}
+                            </div>
                         </div>
                     </div>
-                    <div className="col-xl-4 col-sm-6 col-md-6">
-                        <div className="pyramid">
+                    <div className="col-12 col-lg-4">
+                        <div className="pyramid-card">
+                            <h3 className="pyramid-title">Aufbau Principle</h3>
+                            <div className="pyramid">
                             {subShellsCount.map((count, i) => (
                                 <div className="pyramid-row" key={i}>
                                     {Array.from({ length: count }).map((_, j) => {
@@ -228,20 +231,20 @@ function SubShells() {
 
                                 </div>
                             ))}
+                            </div>
                         </div>
-
                     </div>
-                    <div className="col-xl-4 col-sm-12 col-md-12">
-                        <div className="box electron-box text-white" style={{ height: "50%", backgroundColor: decodedColor }}>
-                            <h3>Electron</h3>
-                            <div className="box  text-dark" style={{ height: "10%", backgroundColor: "white" }}>
-                                <h2>{electronVal}</h2>
+                    <div className="col-12 col-lg-4">
+                        <div className="electron-counter" style={{ backgroundColor: decodedColor }}>
+                            <h3 className="counter-title">Total Electrons</h3>
+                            <div className="counter-display">
+                                <h2 className="counter-value">{electronVal}</h2>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

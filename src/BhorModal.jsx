@@ -111,51 +111,49 @@ function BhorModal() {
 
 
     return (
-        <div className="container text-white">
-            <div className="row">
-                <div className="col-sm-4">
-                    <button className="custom-button home-btn-bhormodal pull-push-anime mb-2"
-                        style={{ backgroundColor: `${decodedColor}` }}
-                        onClick={goToDetails}>
-                        Home
+        <div className="page-wrapper">
+            <div className="page-inner">
+                <div className="page-header">
+                    <button
+                        className="btn btn-sm"
+                        style={{ backgroundColor: decodedColor }}
+                        onClick={goToDetails}
+                    >
+                        ← Home
                     </button>
+                    <h1 className="page-title" style={{ backgroundColor: decodedColor }}>
+                        {ename} — {pvalue}
+                    </h1>
                 </div>
-                <div className="col-sm-4">
-                    <h2 className='head-style' style={{ backgroundColor: `${decodedColor}` }}>{ename}-{pvalue}</h2>
-                </div>
-                <div className="col-sm-4"></div>
-            </div>
 
-            <div className="row">
-                <div className="col-sm-6">
-                    <CreateBox
-                        pValue={pvalue}
-                        esymbol={esymbol}
-                        decodedColor={decodedColor}
-                        buttonActive={setBoxShadow}
-                        isBoxShadow={isBoxShadow}
-                        shellIndexValue={shellIndexValue}
-                        setIndexValue={setIndexValue}
-                        subShellButtonsAccurateNamesList={subShellButtonsAccurateNamesList}
-                        electronList={electronList}
-                        setShellName={setShellName}
-                        setSubValues={setSubValues}
-                    />
-                </div>
-                <div className="col-sm-6">
-                    {/* <ShellProvider> */}
-                    <SubShellsAtom pValue={pvalue}
-                        esymbol={esymbol}
-                        isBoxShadow={isBoxShadow}
-                        shellIndexValue={shellIndexValue}
-                        electronList={electronList}
-                        getShellName={getShellName}
-                        decodedColor={decodedColor}
-                        setSubValues={setSubValues}
-                        subValues={subValues}
-                    // setCheck={setCheck}
-                    />
-                    {/* </ShellProvider> */}
+                <div className="row g-4">
+                    <div className="col-12 col-lg-6">
+                        <CreateBox
+                            pValue={pvalue}
+                            esymbol={esymbol}
+                            decodedColor={decodedColor}
+                            buttonActive={setBoxShadow}
+                            isBoxShadow={isBoxShadow}
+                            shellIndexValue={shellIndexValue}
+                            setIndexValue={setIndexValue}
+                            subShellButtonsAccurateNamesList={subShellButtonsAccurateNamesList}
+                            electronList={electronList}
+                            setShellName={setShellName}
+                            setSubValues={setSubValues}
+                        />
+                    </div>
+                    <div className="col-12 col-lg-6">
+                        <SubShellsAtom pValue={pvalue}
+                            esymbol={esymbol}
+                            isBoxShadow={isBoxShadow}
+                            shellIndexValue={shellIndexValue}
+                            electronList={electronList}
+                            getShellName={getShellName}
+                            decodedColor={decodedColor}
+                            setSubValues={setSubValues}
+                            subValues={subValues}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
@@ -165,15 +163,13 @@ function BhorModal() {
 export function SubShellsAtom({ pValue, esymbol, isBoxShadow, shellIndexValue, electronList,
     getShellName, decodedColor, setSubValues, subValues }) {
 
-    // const { subValues } = useContext(ShellContext);
-    // setCheck(true);
     console.log("subValues", subValues);
     return (
-        <div className="box-container">
-            <div className="sub-head" style={{ backgroundColor: decodedColor }}>{getShellName == undefined ? 'K Sub Shell' : `${getShellName} Sub Shell`}</div>
-            <div className="box-style mt-3">
-                {/* <ShellProvider> */}
-                {/* <div className="atom-box"> */}
+        <div className="modal-box-container">
+            <div className="modal-header-badge" style={{ backgroundColor: decodedColor }}>
+                {getShellName == undefined ? 'K Sub Shell' : `${getShellName} Sub Shell`}
+            </div>
+            <div className="modal-content-box">
                 <BhormodalDesign
                     pValue={pValue}
                     esymbol={esymbol}
@@ -181,16 +177,14 @@ export function SubShellsAtom({ pValue, esymbol, isBoxShadow, shellIndexValue, e
                     isBoxShadow={isBoxShadow}
                     shellIndexValue={shellIndexValue}
                     setSubValues={setSubValues}
-                    // setCheck={setCheck}
                     electronList={electronList}
                 />
-                {/* </div> */}
-                {/* </ShellProvider> */}
-                <div class="sub-shell-wrapper">
-                    <p className='text-dark sub-shell-label'>
-                        {getShellName == undefined ? 'K Sub Shell' : `${getShellName} Sub Shell`}</p>
-                    <div className="sub-shell-box">
-                        <div className="row row-style">
+                <div className="sub-shell-display">
+                    <p className='sub-shell-title'>
+                        {getShellName == undefined ? 'K Sub Shell' : `${getShellName} Sub Shell`}
+                    </p>
+                    <div className="sub-shell-content">
+                        <div className="row g-2 justify-content-center">
                             {subValues.map((item, index) => (
                                 <React.Fragment key={index}>
                                     {item}
@@ -220,10 +214,9 @@ function CreateBox({ pValue, esymbol, decodedColor, buttonActive,
 
 
     return (
-        <div className="box-container">
-            <div className="sub-head mt-3" style={{ backgroundColor: decodedColor }}>Bhor Modal</div>
-            <div className="box-style mt-3">
-                {/* <ShellProvider> */}
+        <div className="modal-box-container">
+            <div className="modal-header-badge" style={{ backgroundColor: decodedColor }}>Bohr Model</div>
+            <div className="modal-content-box">
                 <BhormodalDesign
                     pValue={pValue}
                     esymbol={esymbol}
@@ -233,37 +226,22 @@ function CreateBox({ pValue, esymbol, decodedColor, buttonActive,
                     electronList={electronList}
                     setSubValues={setSubValues}
                 />
-                {/* </ShellProvider> */}
             </div>
-            <div className="shell-buttons">
-                <div className="container-fluid">
-                    <div className="row g-3">
-                        {Array.from({ length: subShellButtonsAccurateNamesList }).map((_, index) => (
-                            <ShellButtons
-                                key={index}
-                                index={index}
-                                shellName={shellNamesList[index]}
-                                shellIndexValue={shellIndexValue}
-                                shellColor={shellColorsList[index]}
-                                buttonActive={buttonActive}
-                                isBoxShadow={isBoxShadow}
-                                setIndexValue={setIndexValue}
-                                setShellName={setShellName}
-                            />
-                        ))}
-                        {/* {subShellButtonsAccurateNamesList.map((name, index) => (
-                            <ShellButtons
-                                key={index}
-                                index={index}
-                                shellName={name}
-                                shellColor={shellColorsList[index]}
-                                buttonActive={buttonActive} // Pass function here
-                                setIndexValue={setIndexValue}
-                                isBoxShadow={isBoxShadow}
-                                shellIndexValue={shellIndexValue}
-                            />
-                        ))} */}
-                    </div>
+            <div className="shell-buttons-container">
+                <div className="row g-2 justify-content-center">
+                    {Array.from({ length: subShellButtonsAccurateNamesList }).map((_, index) => (
+                        <ShellButtons
+                            key={index}
+                            index={index}
+                            shellName={shellNamesList[index]}
+                            shellIndexValue={shellIndexValue}
+                            shellColor={shellColorsList[index]}
+                            buttonActive={buttonActive}
+                            isBoxShadow={isBoxShadow}
+                            setIndexValue={setIndexValue}
+                            setShellName={setShellName}
+                        />
+                    ))}
                 </div>
             </div>
         </div>
@@ -282,19 +260,17 @@ function ShellButtons({ index, shellName, shellColor,
     };
 
     return (
-        <div className="col-sm-3 col-3">
-            <button className='text-white shell-button-style'
+        <div className="col-6 col-sm-4 col-md-3 col-lg-auto">
+            <button className='shell-btn'
                 onClick={buttonAction}
                 style={{
                     backgroundColor: shellColor,
-                    // boxShadow: " rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
                     boxShadow: (shellIndexValue == undefined && index == 0) || (shellIndexValue === index && isBoxShadow)
-                        ? `0 0 8px 2px ${shellColor}, 0 0 15px 4px ${shellColor}, 0 0 25px 6px ${shellColor}`
-                        : `0 2px 6px ${shellColor}`,
-
-
-                    border: 'none',
-                    transition: 'box-shadow 0.3s ease-in-out' // Smooth effect
+                        ? `0 0 0 3px ${shellColor}40, 0 0 20px ${shellColor}`
+                        : `0 4px 10px ${shellColor}60`,
+                    border: (shellIndexValue == undefined && index == 0) || (shellIndexValue === index && isBoxShadow)
+                        ? `2px solid ${shellColor}`
+                        : 'none'
                 }}>
                 {shellName}
             </button>

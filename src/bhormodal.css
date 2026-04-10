@@ -1,144 +1,177 @@
-.bhor-modal-bg {
-    background-color: gray !important;
-}
+/* ============================================================
+   BOHR MODAL PAGE
+   ============================================================ */
 
-.container {
-    padding: 0px !important;
-}
-
-.head-style {
-    text-align: center;
-    /* background-color: green; */
-    width: 100%;
-    /* Full width */
-    padding: 5px 0;
-    /* Adjust padding for better height */
-    border-radius: 15px;
-    /* Apply border radius */
-    display: block;
-    /* margin-bottom: 50px; */
-}
-
-.box-container {
+/* ── Modal panel (white card) ── */
+.modal-box-container {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    margin: 20px 0;
-    /* Adds spacing between boxes */
-}
-
-.box-style {
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
+    background: rgba(255,255,255,0.98);
+    border-radius: 18px;
+    /* top padding makes room for the floating badge */
+    padding: 2.75rem 1rem 1.25rem;
+    box-shadow: 0 10px 36px rgba(0,0,0,0.22);
+    animation: fadeInUp 0.5s ease-out both;
+    min-height: 360px;
+    /* centred, capped at 650px */
+    max-width: 650px;
     width: 100%;
-    min-height: 400px;
+    margin: 0 auto;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Floating title badge ── */
+.modal-header-badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1.5rem;
+    border-radius: 18px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: #fff;
+    box-shadow: 0 5px 16px rgba(0,0,0,0.26);
+    white-space: nowrap;
+    letter-spacing: 0.4px;
+}
+
+/* ── Atom visualisation area ── */
+.modal-content-box {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0.625rem;
+    overflow: hidden;
+    /* Prevent the atom SVG from overflowing the card */
+    min-height: 0;
 }
 
-.atom-box {
-    display: flex;
-    justify-content: center;
+/* ── Shell selector buttons ── */
+.shell-buttons-container {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(0,0,0,0.03);
+    border-radius: 10px;
+}
+
+/* Shell buttons — uniform size, consistent alignment */
+.shell-btn {
+    display: inline-flex;
     align-items: center;
-    flex-direction: column;
-    /* width: 100%; height: 100%; */
-    /* background-color: red; */
-}
-
-.sub-head,
-.shell-buttons {
-    width: 60%;
+    justify-content: center;
+    width: 100%;
+    min-width: 44px;
     height: 40px;
-    /* background-color: green; */
-    border-radius: 20px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    padding: 0 0.75rem;
+    border-radius: 9px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
-.sub-head {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    top: -20px;
-    /* Above the box */
+.shell-btn:hover  { transform: translateY(-2px) scale(1.06); }
+.shell-btn:active { transform: translateY(0)    scale(1.02); }
+
+/* ── Sub-shell display section ── */
+.sub-shell-display {
+    margin-top: 1.25rem;
+    width: 100%;
 }
 
-.shell-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: -10px;
-    /* Below the box */
+/* Centred pill label */
+.sub-shell-title {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 0.75rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #333;
+    padding: 0.4rem 1rem;
+    background: rgba(0,0,0,0.05);
+    border-radius: 16px;
 }
 
-.shell-button-style {
-    padding-left: 30%;
-    padding-right: 30%;
-    border-radius: 5px;
-}
-
-.home-btn-bhormodal {
-    margin-left: 25%;
-}
-
-/* Sub structure atom write a sub shell values */
-.sub-shells-texts {
-    padding-left: 30px;
-    padding-right: 10px;
+.sub-shell-content {
+    padding: 0.875rem;
+    background: rgba(0,0,0,0.02);
     border-radius: 10px;
-    font-weight: bold;
-    font-size: 13px;
-    /* position: relative; top: 25px; */
+    border: 2px solid rgba(0,0,0,0.06);
 }
 
-.sub-shells-items {
-    border-radius: 50px;
-}
-
-.sub-shell-wrapper {
-    top: 25px;
-    position: relative;
-    display: inline-block;
-}
-
-.sub-shell-label {
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    padding: 2px 6px;
-    border: 2px solid red;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 13px;
-    z-index: 2;
-}
-
-.sub-shell-box {
-    display: flex;
-    gap: 15px;
-    padding: 0px 100px 0px;
-    border: 2px solid red;
-    border-radius: 50px;
-    background-color: white;
-}
-
+/* Sub-shell pills */
 .sub-pill {
-    margin-top: 10px;
-    padding: 6px 14px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 14px;
-    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.75rem;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: transform 0.22s ease;
+    margin: 0.2rem;
+}
+.sub-pill:hover { transform: scale(1.08); }
+
+/* ── Tablet (768px+) ── */
+@media (min-width: 768px) {
+    .modal-box-container {
+        padding: 3.25rem 1.5rem 1.5rem;
+        min-height: 420px;
+        border-radius: 20px;
+    }
+
+    .modal-header-badge {
+        padding: 0.55rem 1.75rem;
+        font-size: 0.925rem;
+        top: -14px;
+    }
+
+    .modal-content-box { padding: 0.875rem; }
+
+    .shell-buttons-container { margin-top: 1.25rem; padding: 0.875rem; }
+
+    .shell-btn { height: 44px; font-size: 0.925rem; min-width: 52px; }
+
+    .sub-shell-title { font-size: 0.85rem; padding: 0.45rem 1.125rem; }
+    .sub-shell-content { padding: 1rem; }
+    .sub-pill { padding: 0.45rem 0.875rem; font-size: 0.85rem; }
 }
 
+/* ── Desktop (1024px+) ── */
+@media (min-width: 1024px) {
+    .modal-box-container {
+        padding: 3.75rem 2rem 2rem;
+        min-height: 470px;
+        border-radius: 22px;
+    }
+
+    .modal-header-badge {
+        padding: 0.6rem 2.25rem;
+        font-size: 0.95rem;
+        top: -15px;
+    }
+
+    .shell-btn { height: 46px; font-size: 0.95rem; min-width: 58px; }
+}
+
+/* ── Large desktop (1440px+) ── */
+@media (min-width: 1440px) {
+    .modal-box-container { max-width: 700px; }
+}

@@ -1,212 +1,216 @@
-.container {
-    padding: 20px;
+/* ============================================================
+   DETAILS PAGE
+   ============================================================ */
+
+/* ── Action buttons column ── */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    /* Don't use height:100% — it breaks in Bootstrap col context */
 }
 
-body {
-    background-color: white !important;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-}
-
+/* ── Coloured outer box wrapping each card ── */
 .box {
-    /* background-color: lightblue; */
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
+    padding: 1.125rem;
+    border-radius: 16px;
     width: 100%;
-    height: 100%;
-    min-height: 150px;
+    min-height: 140px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.28);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    animation: fadeInUp 0.5s ease-out both;
 }
 
-/* Add spacing between rows */
-.col-md-4 {
-    margin-bottom: 20px;
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Styling for Button Container */
-.button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.36);
 }
 
-/* Button Styling */
-.custom-button {
-    font-weight: bold;
-    padding: 20px 20px;
-    margin-bottom: 20px;
+/* ── Modern card (white inner card) ── */
+.modern-card {
+    position: relative;
+    border-radius: 16px !important;
+    overflow: visible;
     border: none;
-    /* background-color: lightblue; */
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.custom-button:hover {
-    /* background-color: lightblue; */
-}
-
-.elementCradnum {
-    display: block !important;
-}
-
-.card-style {
+    background: rgba(255,255,255,0.98);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.13);
+    transition: transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275),
+                box-shadow 0.3s ease;
     width: 100%;
 }
 
-.atom {
-    transform: scale(0.3);
-    /* Adjust the scale as needed */
-    margin-top: 39%;
+.modern-card:hover {
+    transform: translateY(-5px) scale(1.012);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.20);
 }
 
-.valance-atom {
-    transform: scale(0.3);
-    /* Adjust the scale as needed */
-    margin-top: 30%;
+/* Floating emoji badge */
+.card-icon {
+    position: absolute;
+    top: -16px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    box-shadow: 0 5px 16px rgba(102,126,234,0.42);
+    z-index: 10;
+    animation: float 3s ease-in-out infinite;
 }
 
-.valence-card {
-    height: 200%;
-    /* padding-bottom: 30%; */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-5px); }
 }
+
+/* ── Card internals ── */
+.card-style {
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.13);
+}
+
+.card-header {
+    background: linear-gradient(135deg, rgba(0,0,0,0.08), rgba(0,0,0,0.04));
+    font-weight: 600;
+    padding: 0.75rem 0.875rem;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    font-size: 0.875rem;
+}
+
+.card-body  { padding: 0.875rem; }
+
+.card-footer {
+    padding: 0.5rem 0.875rem;
+    background: rgba(0,0,0,0.02);
+    font-size: 0.875rem;
+}
+
+/* ── Element symbol inside card ── */
+.element-symbol {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0.3rem 0;
+    line-height: 1.2;
+}
+
+/* ── Element image ── */
+.fixed-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 9px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.16);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.fixed-image:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.24);
+}
+
+/* ── Application list ── */
+.application-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+.application-list li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    line-height: 1.5;
+    font-size: 0.875rem;
+    color: #333;
+}
+.application-list li:last-child { border-bottom: none; }
+
+/* ── Particle counts ── */
+.elementNum { margin-top: 0.625rem; text-align: left; }
+.elementNum p { margin: 0.4rem 0; font-size: 0.875rem; line-height: 1.5; }
+
+/* ── Atom animation containers ── */
+.atom        { transform: scale(0.28); margin-top: 18%; }
+.valance-atom{ transform: scale(0.28); margin-top: 18%; }
+.valence-card{ min-height: 210px; }
 
 .nucleus {
     position: absolute !important;
-    /* Ensure absolute positioning */
-    top: 50%;
-    /* Move to center vertically */
-    left: 50%;
-    /* Move to center horizontally */
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    /* Adjust to exact center */
-    width: 100px;
-    height: 100px;
-    background-color: blue;
+    width: 68px; height: 68px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-weight: bold;
-    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
     z-index: 10;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.28);
 }
 
-.element-name-style-details-page {
-    font-size: 50px;
-}
-
-@media (max-width:992px) {
-    .container {
-        max-width: 1000px !important;
-    }
-}
-
-@media (max-width: 768px) {
-
-    /* .col-md-4 { width: 100%; } */
-    .container {
-        max-width: 730px !important;
-    }
-
-    .valence-card {
-        padding-bottom: 20%;
-    }
-
-    .atom {
-        margin-top: 20%;
-    }
-
-    /* .valence-shell{ margin-top: 50% !important; } */
-}
-
-.shell {
-    border: 2px solid black;
-}
+.shell    { border: 2px solid rgba(255,255,255,0.28); }
 
 .electron {
-    width: 20px;
-    height: 20px;
-    background-color: red;
+    width: 12px; height: 12px;
+    background: radial-gradient(circle, #ff6b6b, #ee5a6f);
     border-radius: 50%;
     position: absolute;
+    box-shadow: 0 0 5px rgba(255,107,107,0.48);
 }
 
-.arrow {
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    background-color: red;
+/* ── Tablet (768px+) ── */
+@media (min-width: 768px) {
+    .box { padding: 1.375rem; min-height: 160px; border-radius: 18px; }
+
+    .card-icon { width: 46px; height: 46px; font-size: 21px; top: -18px; right: 18px; }
+    .card-header { padding: 0.875rem 1rem; font-size: 0.9rem; }
+    .card-body   { padding: 1rem; }
+
+    .element-symbol { font-size: 2rem; }
+
+    .atom         { transform: scale(0.32); margin-top: 22%; }
+    .valance-atom { transform: scale(0.32); margin-top: 22%; }
+
+    .nucleus  { width: 78px; height: 78px; font-size: 16px; }
+    .electron { width: 14px; height: 14px; }
 }
 
-/* pull push animation */
-.pull-push-anime {
-    animation: pulse 2s infinite ease-in;
+/* ── Desktop (1024px+) ── */
+@media (min-width: 1024px) {
+    .box { padding: 1.625rem; min-height: 180px; }
+
+    .card-icon { width: 48px; height: 48px; font-size: 23px; }
+    .card-header { padding: 1rem 1.125rem; font-size: 0.95rem; }
+    .card-body   { padding: 1.125rem; }
+
+    .element-symbol { font-size: 2.25rem; }
+
+    .atom         { transform: scale(0.36); margin-top: 26%; }
+    .valance-atom { transform: scale(0.36); margin-top: 26%; }
+    .valence-card { min-height: 250px; }
+
+    .nucleus  { width: 88px; height: 88px; font-size: 18px; }
+    .electron { width: 16px; height: 16px; }
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(0.85);
-    }
-
-    50% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(0.85);
-    }
-}
-
-@media (max-width:1199px) {
-    .valance-atom {
-        margin-top: 15% !important;
-    }
-}
-
-@media (max-width:575px) {
-    .atom {
-        margin-top: 30%;
-    }
-
-    .elementNum {
-        margin-top: 20%;
-    }
-
-    .valance-atom {
-        margin-top: 30% !important;
-    }
-}
-
-@media (max-width:375px) {
-    .atom {
-        margin-top: 30%;
-    }
-
-    .elementNum {
-        margin-top: 30%;
-    }
-
-    .valence-card {
-        padding-bottom: 40%;
-    }
-
-    .valance-atom {
-        margin-top: 40% !important;
-    }
-}
-
-/* Real time image style  */
-
-.fixed-image {
-  max-width: 125%;      /* or your required width */
-  height: 100%;     /* or match container height */
-  object-fit: cover;
-  border-radius: 8px; /* optional, keeps the rounded effect */
+/* ── Large desktop (1440px+) ── */
+@media (min-width: 1440px) {
+    .nucleus  { width: 96px; height: 96px; font-size: 20px; }
+    .electron { width: 18px; height: 18px; }
 }

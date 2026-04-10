@@ -19,6 +19,14 @@ function Table() {
     return (
         <div className="home-style">
                 {/* <NavBar /> */}
+                
+                {/* Hero Section */}
+                <div className="hero-section">
+                    <h1>⚛️ Periodic Table Explorer</h1>
+                    <p>Discover the building blocks of our universe</p>
+                </div>
+                
+                <div className="table-scroll-wrapper">
                 <div className="periodic-table">
                     {elementsNames.map((item, index) => {
                         const position = elementPositions[index] || {}; // Get position data
@@ -92,7 +100,8 @@ function Table() {
                             </>
                         );
                     })}
-                </div >
+                </div>
+                </div>
         </div>
     );
 }

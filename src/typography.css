@@ -1,0 +1,225 @@
+/* ============================================================
+   GLOBAL DESIGN SYSTEM — single source of truth
+   ============================================================ */
+
+/* ── CSS Variables ── */
+:root {
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Typography — mobile-first */
+    --h1: 20px;
+    --h2: 17px;
+    --h3: 15px;
+    --body: 14px;
+    --small: 12px;
+
+    /* Spacing tokens */
+    --sp-xs:  0.375rem;   /*  6px */
+    --sp-sm:  0.75rem;    /* 12px */
+    --sp-md:  1.25rem;    /* 20px */
+    --sp-lg:  1.75rem;    /* 28px */
+    --sp-xl:  2.5rem;     /* 40px */
+
+    /* Border-radius */
+    --r-sm:  8px;
+    --r-md:  12px;
+    --r-lg:  16px;
+    --r-xl:  22px;
+
+    /* Shadows */
+    --sh-sm: 0 2px 8px  rgba(0,0,0,0.14);
+    --sh-md: 0 5px 18px rgba(0,0,0,0.20);
+    --sh-lg: 0 10px 32px rgba(0,0,0,0.26);
+
+    /* Brand gradient */
+    --brand-a: #667eea;
+    --brand-b: #764ba2;
+    --brand:   linear-gradient(135deg, var(--brand-a), var(--brand-b));
+
+    /* Page padding */
+    --page-px: 1rem;
+    --page-py: 1rem;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --h1: 24px;
+        --h2: 20px;
+        --h3: 17px;
+        --body: 15px;
+        --page-px: 1.5rem;
+        --page-py: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --h1: 30px;
+        --h2: 23px;
+        --h3: 19px;
+        --body: 16px;
+        --page-px: 2rem;
+        --page-py: 2rem;
+    }
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: var(--font);
+    font-size: var(--body);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font);
+    line-height: 1.3;
+    margin: 0 0 var(--sp-sm);
+    font-weight: 700;
+    word-break: break-word;
+}
+h1 { font-size: var(--h1); }
+h2 { font-size: var(--h2); font-weight: 600; }
+h3 { font-size: var(--h3); font-weight: 600; }
+
+p { margin: 0 0 var(--sp-sm); line-height: 1.6; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ============================================================
+   PAGE SHELL — wraps every page
+   ============================================================ */
+.page-wrapper {
+    min-height: 100vh;
+    padding: var(--page-py) 0;
+}
+
+/* Centred, max-width container */
+.page-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--page-px);
+}
+
+/* ── Page header row (back-btn + title) ── */
+.page-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-sm);
+    margin-bottom: var(--sp-lg);
+    align-items: stretch;
+}
+
+@media (min-width: 576px) {
+    .page-header {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.page-title {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    border-radius: var(--r-md);
+    box-shadow: var(--sh-md);
+    margin: 0;
+    font-size: var(--h1);
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+@media (min-width: 768px) {
+    .page-title {
+        padding: 0.75rem 1.25rem;
+        border-radius: var(--r-lg);
+    }
+}
+
+/* ============================================================
+   UNIFIED BUTTON SYSTEM
+   ============================================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    font-family: var(--font);
+    font-size: var(--body);
+    font-weight: 600;
+    line-height: 1.3;
+    padding: 0.65rem 1.25rem;
+    border: none;
+    border-radius: var(--r-md);
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fff;
+    box-shadow: var(--sh-md);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.3px;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0);
+    transition: background 0.25s ease;
+    border-radius: inherit;
+}
+
+.btn:hover::after  { background: rgba(255,255,255,0.13); }
+.btn:hover         { transform: translateY(-2px); box-shadow: var(--sh-lg); }
+.btn:active        { transform: translateY(0);    box-shadow: var(--sh-sm); }
+
+/* Size variants */
+.btn-sm {
+    padding: 0.45rem 0.9rem;
+    font-size: var(--small);
+    border-radius: var(--r-sm);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-lg {
+    padding: 0.9rem 1.75rem;
+    font-size: var(--body);
+}
+
+/* Full-width */
+.btn-block { width: 100%; }
+
+/* ============================================================
+   SHARED CARD
+   ============================================================ */
+.content-card {
+    background: rgba(255,255,255,0.98);
+    border-radius: var(--r-lg);
+    padding: var(--sp-md);
+    box-shadow: var(--sh-md);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    animation: fadeInUp 0.45s ease-out both;
+}
+
+.content-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sh-lg);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

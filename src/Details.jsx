@@ -85,29 +85,51 @@ try {
         navigate(`/subShell/${index}/${Ename}/${automicNum}/${bhorModalColor}`, { replace: true });
     };
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-sm-4">
-                    <button className="custom-button pull-push-anime mb-2" style={{ backgroundColor: decodedColor }} onClick={gotoTable}>Back</button>
+        <div className="page-wrapper">
+            <div className="page-inner">
+                <div className="page-header">
+                    <button
+                        className="btn btn-sm"
+                        style={{ backgroundColor: decodedColor }}
+                        onClick={gotoTable}
+                    >
+                        ← Back
+                    </button>
+                    <h1 className="page-title" style={{ backgroundColor: decodedColor }}>
+                        {Ename} — {automicNum}
+                    </h1>
                 </div>
-                <div className="col-sm-4">
-                    <h3 className='head-style text-white' style={{ backgroundColor: `${decodedColor}` }}>{Ename}-{automicNum}</h3>
-                </div>
-            </div>
 
-            {/* <h3>{index}</h3> */}
-            <div className="row g-3">
-                {components.map(({ id, component }) => (
-                    <div className="col-sm-12 col-md-6 col-xl-4" key={id}>
-                        <Box decodedColor={decodedColor}>{component}</Box>
-                    </div>
-                ))}
-                <div className="col-sm-12 col-md-6 col-xl-4">
-                    <div className="button-container">
-                        <button className="custom-button pull-push-anime" style={{ backgroundColor: decodedColor }} onClick={gotoBhorModalPage}>Bhor Modal</button>
-                        <button className="custom-button pull-push-anime" style={{ backgroundColor: decodedColor }} onClick={goToSubShellPage}>Aufbau Principal</button>
-                        {/* <a href={watchAndLearnLink}><button className="custom-button pull-push-anime" style={{ backgroundColor: decodedColor }}>Watch and Learn</button></a> */}
-                        <a href={watchAndLearnLink} className="custom-button text-center pull-push-anime" style={{ backgroundColor: decodedColor, textDecoration: 'none' }}>Watch and Learn</a>
+                <div className="row g-3">
+                    {components.map(({ id, component }) => (
+                        <div className="col-12 col-md-6 col-xl-4" key={id}>
+                            <Box decodedColor={decodedColor}>{component}</Box>
+                        </div>
+                    ))}
+                    <div className="col-12 col-md-6 col-xl-4">
+                        <div className="action-buttons">
+                            <button
+                                className="btn btn-block"
+                                style={{ backgroundColor: decodedColor }}
+                                onClick={gotoBhorModalPage}
+                            >
+                                Bohr Model
+                            </button>
+                            <button
+                                className="btn btn-block"
+                                style={{ backgroundColor: decodedColor }}
+                                onClick={goToSubShellPage}
+                            >
+                                Aufbau Principle
+                            </button>
+                            <a
+                                href={watchAndLearnLink}
+                                className="btn btn-block"
+                                style={{ backgroundColor: decodedColor }}
+                            >
+                                Watch &amp; Learn
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -127,18 +149,17 @@ function Box({ children, decodedColor }) {
 
 function ElementCard({ elementSymbol, elementName, atomicNumber, atomicMass, elementImage }) {
     return (
-        <div className="card card-style element-card">
+        <div className="card card-style element-card modern-card">
+            <div className="card-icon">⚛️</div>
             <div className="row">
                 <div className="col-sm-4">
                     <img src={elementImage} alt={elementName} className="img-fluid rounded fixed-image" />
-                    {/* <img src="" alt="" /> */}
-                    {/* <p>This is image seciton</p> */}
                 </div>
                 <div className="col-sm-8">
                     <div className="card">
                         <div className="card-header d-flex justify-content-between align-items-center">
-                            <p className="mb-0">{atomicNumber}</p>
-                            <p className="mb-0">{atomicMass}</p>
+                            <p className="mb-0">⚡ {atomicNumber}</p>
+                            <p className="mb-0">⚖️ {atomicMass}</p>
                         </div>
                         <div className="card-body text-center">
                             <h2 className="element-symbol">{elementSymbol}</h2>
@@ -157,12 +178,13 @@ function ElementCard({ elementSymbol, elementName, atomicNumber, atomicMass, ele
 
 function ElementDetails({ elementName, elementSymbol }) {
     return (
-        <div className="card card-style element-details">
+        <div className="card card-style element-details modern-card">
+            <div className="card-icon">🧪</div>
             <div className="card-header">Element Detail</div>
             <div className="card-body">
-                <p><strong>Element Name</strong></p>
+                <p><strong>🔬 Element Name</strong></p>
                 <p>{elementName}</p>
-                <p><strong>Element Symbol</strong></p>
+                <p><strong>🏷️ Element Symbol</strong></p>
                 <p>{elementSymbol}</p>
             </div>
         </div>
@@ -171,7 +193,8 @@ function ElementDetails({ elementName, elementSymbol }) {
 
 function ValanceElectron({ eSymbol, pValue }) {
     return (
-        <div className="card card-style valence-card">
+        <div className="card card-style valence-card modern-card">
+            <div className="card-icon">⚡</div>
             <div className="card-header">Valance Electron</div>
             <div className="card-body">
                 <CreateAnimation elementName={eSymbol} pValue={pValue} isValance={true} />
@@ -182,7 +205,8 @@ function ValanceElectron({ eSymbol, pValue }) {
 
 function AtomStructure({ eSymbol, automicNum, nutron }) {
     return (
-        <div className="card card-style atom-structure">
+        <div className="card card-style atom-structure modern-card">
+            <div className="card-icon">⚛️</div>
             <div className="card-header">Basic particles of an atom</div>
             <div className="card-body text-center">
                 <div className="row">
@@ -191,9 +215,9 @@ function AtomStructure({ eSymbol, automicNum, nutron }) {
                     </div>
                     <div className="col-sm-6">
                         <div className="elementNum">
-                            <p>Protons: {automicNum}</p>
-                            <p>Neutrons: {nutron}</p>
-                            <p>Electrons: {automicNum}</p>
+                            <p>🔴 Protons: {automicNum}</p>
+                            <p>⚪ Neutrons: {nutron}</p>
+                            <p>🔵 Electrons: {automicNum}</p>
                         </div>
                     </div>
                 </div>
@@ -204,18 +228,19 @@ function AtomStructure({ eSymbol, automicNum, nutron }) {
 
 function Application({ elementImg, elementItems }) {
     return (
-        <div className="card card-style application">
-            <div className="card-header">Applications of Lead</div>
+        <div className="card card-style application modern-card">
+            <div className="card-icon">🔬</div>
+            <div className="card-header">Applications</div>
             <div className="card-body text-center">
                 <div className="row">
                     <div className="col-sm-6">
                         <img src={elementImg} alt="Applications" className="img-fluid" />
                     </div>
                     <div className="col-sm-6">
-                        <ul className="text-start">
-                            <li>{elementItems[0]}</li>
-                            <li>{elementItems[1]}</li>
-                            <li>{elementItems[2]}</li>
+                        <ul className="text-start application-list">
+                            <li>✓ {elementItems[0]}</li>
+                            <li>✓ {elementItems[1]}</li>
+                            <li>✓ {elementItems[2]}</li>
                         </ul>
                     </div>
                 </div>
